@@ -1,0 +1,72 @@
+.recipe-detail {
+  max-width: 1300px;
+  padding: 30px;  
+
+  background-color: white;
+  border-radius: 10px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.recipe-detail-image {
+  display: block;
+  width: 75%;
+  max-height: 450px;
+  margin: 0 auto 35px;
+
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.recipe-detail-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.recipe-detail-content h1 {
+  margin: 0 0 15px;
+  font-size: 36px;
+}
+
+.recipe-detail-content p {
+  margin: 8px 0;
+  color: #666;
+}
+
+/* Séparateurs invisibles */
+.recipe-detail-content h2 {
+  margin-top: 35px;
+  margin-bottom: 15px;
+  padding-top: 25px;
+
+  border-top: 1px solid transparent;
+
+  font-size: 24px;
+}
+
+.recipe-detail-content ul,
+.recipe-detail-content ol {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.recipe-detail-content li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* Ingrédients : pas de puces */
+.recipe-detail-content ul,
+.recipe-detail-content ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+.recipe-detail-content ul li {
+  font-weight: 700;
+}
+
+/* Instructions : numérotation conservée */
+.recipe-detail-content ol li {
+  font-weight: 400;
+}

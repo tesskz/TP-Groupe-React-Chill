@@ -1,0 +1,77 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Couvercle -->
+  <ellipse cx="150" cy="85" rx="85" ry="25" fill="#777"/>
+  <rect x="65" y="75" width="170" height="20" fill="#777"/>
+  <ellipse cx="150" cy="75" rx="85" ry="25" fill="#999"/>
+
+  <!-- Poignée du couvercle -->
+  <rect x="125" y="42" width="50" height="15" rx="7" fill="#555"/>
+  <ellipse cx="150" cy="42" rx="25" ry="8" fill="#555"/>
+
+  <!-- Corps de la marmite -->
+  <path
+    d="M60 95
+       L70 210
+       Q75 245 110 255
+       L190 255
+       Q225 245 230 210
+       L240 95
+       Z"
+    fill="#888"
+    stroke="#333"
+    stroke-width="5"
+  />
+
+  <!-- Bord supérieur -->
+  <ellipse
+    cx="150"
+    cy="95"
+    rx="90"
+    ry="25"
+    fill="#aaa"
+    stroke="#333"
+    stroke-width="5"
+  />
+
+  <!-- Intérieur -->
+  <ellipse
+    cx="150"
+    cy="95"
+    rx="75"
+    ry="17"
+    fill="#444"
+  />
+
+  <!-- Anse gauche -->
+  <path
+    d="M65 125
+       Q30 120 30 155
+       Q30 185 70 175"
+    fill="none"
+    stroke="#333"
+    stroke-width="15"
+    stroke-linecap="round"
+  />
+
+  <!-- Anse droite -->
+  <path
+    d="M235 125
+       Q270 120 270 155
+       Q270 185 230 175"
+    fill="none"
+    stroke="#333"
+    stroke-width="15"
+    stroke-linecap="round"
+  />
+
+  <!-- Pieds -->
+  <rect x="85" y="245" width="25" height="20" rx="5" fill="#333"/>
+  <rect x="190" y="245" width="25" height="20" rx="5" fill="#333"/>
+
+    <!-- Couvercle -->
+  <ellipse cx="150" cy="85" rx="85" ry="25" fill="#777"/>
+  <rect x="65" y="75" width="170" height="20" fill="#777"/>
+  <ellipse cx="150" cy="75" rx="85" ry="25" fill="#999"/>
+
+</svg>
