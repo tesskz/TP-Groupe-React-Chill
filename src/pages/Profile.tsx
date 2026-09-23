@@ -9,14 +9,6 @@ function Profile() {
         return <p>Utilisateur non connecté.</p>;
     }
 
-    let hidePassword = "";
-
-    if (user.password) {
-        for (let i = 0; i < user.password.length; i++) {
-            hidePassword += "*";
-        }
-    }
-
     return (
         <main className="profile">
             <div className="profile-card">

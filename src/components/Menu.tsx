@@ -25,16 +25,25 @@ function Menu() {
           {loggedUser && (
             <>
               <li>{loggedUser.firstName}</li>
+
               <li>
-                <button onClick={handleLogout}>Déconnexion</button>
+                <button onClick={handleLogout}>
+                  Déconnexion
+                </button>
               </li>
             </>
           )}
 
           {!loggedUser && (
-            <li>
-              <Link to="/login">Connexion</Link>
-            </li>
+            <>
+              <li>
+                <Link to="/login">Connexion</Link>
+              </li>
+
+              <li>
+                <Link to="/register">Inscription</Link>
+              </li>
+            </>
           )}
 
           <li>

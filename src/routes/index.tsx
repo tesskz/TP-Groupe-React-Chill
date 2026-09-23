@@ -9,6 +9,7 @@ import Profile from '../pages/Profile.tsx'
 import Favorites from '../pages/Favorites.tsx'
 import Blog from '../pages/Blog.tsx'
 import PostDetail from '../pages/PostDetail.tsx'
+import Register from '../pages/Register.tsx'
 import NotFound from '../pages/NotFound.tsx'
 import GuestRoute from './GuestRoute.tsx'
 import PrivateRoute from './PrivateRoute.tsx'
@@ -51,6 +52,10 @@ const routes = [
             {
                 path: '/login',
                 element: <GuestRoute><Login /></GuestRoute>,
+            },
+            {
+                path: '/register',
+                element: <GuestRoute><Register /></GuestRoute>,
             },
             {
                 path: '/profile',
