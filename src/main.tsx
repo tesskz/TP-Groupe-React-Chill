@@ -43,15 +43,20 @@ const getQuote = async () => {
     store.dispatch(setQuote(response.data))
 }
 
-const getLoggedUser = () => {
-    const storedUser = localStorage.getItem("loggedUser");
-
-    if (storedUser) {
-        store.dispatch(setLoggedUser(JSON.parse(storedUser)));
-    } else {
-        store.dispatch(setLoggedUser(null));
+const getLoggedUser = async () => {
+    try {
+        const response = await axios.get('https://dummyjson.com/auth/me', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+        store.dispatch(setLoggedUser(response.data))
+    } catch (e) {
+        localStorage.removeItem('token')
+        store.dispatch(setLoggedUser(null))
     }
-};
+}
 
 Promise.all([getUsers(), getRecipes(), getPosts(), getComments(), getQuote(), getLoggedUser()])
     .finally(() => store.dispatch(setLoading(false)))
