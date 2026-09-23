@@ -1,22 +1,13 @@
-import {useLocation} from "react-router-dom";
+import { useSelector } from "react-redux";
+import type { RootState } from "../store/store";
 import "./Profile.css";
 import NotFound from "./NotFound.tsx";
 
 function Profile() {
-    const location = useLocation();
-    let hidePassword = "";
-    const user = location.state
-
-    if (user) {
-        for (let i = 0; i < user.password.length; i++) {
-            hidePassword += "*";
-        }
-    }
+    const user = useSelector((state: RootState) => state.auth.loggedUser);
 
     if (!user) {
-
         return (<NotFound />);
-
     } else {
 
         return (
@@ -49,10 +40,6 @@ function Profile() {
 
                         <p>
                             <strong>Email :</strong> {user.email}
-                        </p>
-
-                        <p>
-                            <strong>Password :</strong> {hidePassword}
                         </p>
 
                         <p>

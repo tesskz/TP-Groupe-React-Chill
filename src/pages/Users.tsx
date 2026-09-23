@@ -1,8 +1,10 @@
 import "./Users.css";
-import data from "../users.json";
+import { useSelector } from "react-redux";
+import type { RootState } from "../store/store";
 import { Link } from "react-router-dom";
 
 function Users() {
+    const users = useSelector((state: RootState) => state.user.users);
   return (
     <main className="directory">
       <header className="directory-header">
@@ -10,7 +12,7 @@ function Users() {
       </header>
 
       <section className="users-grid">
-        {data.users.map((user) => (
+        {users.map((user) => (
           <Link to={`/users/${user.id}`} className="user-card" key={user.id}>
             <img
               src={user.image}
