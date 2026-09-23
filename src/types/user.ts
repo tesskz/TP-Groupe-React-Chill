@@ -23,6 +23,40 @@ export interface User {
     birthDate: string
     image: string
     role: string
-    address: UserAddress
-    company: UserCompany
+    address?: UserAddress
+    company?: UserCompany
+    maidenName?: string
+    bloodGroup?: string
+    height?: number
+    weight?: number
+    eyeColor?: string
+    hair?: UserHair
+    ip?: string
+    macAddress?: string
+    university?: string
+    bank?: UserBank
+    ein?: string
+    ssn?: string
+    userAgent?: string
+    crypto?: UserCrypto
+    password?: string
+}
+
+export interface UserHair {
+    color: string
+    type: string
+}
+
+export interface UserBank {
+    cardExpire: string
+    cardNumber: string
+    cardType: string
+    currency: string
+    iban: string
+}
+
+export interface UserCrypto {
+    coin: string
+    wallet: string
+    network: string
 }

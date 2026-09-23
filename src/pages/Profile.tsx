@@ -65,33 +65,33 @@ function Profile() {
                         <h2>Adresse</h2>
 
                         <p>
-                            <strong>Adresse :</strong> {user.address.address}
+                            <strong>Adresse :</strong> {user.address?.address}
                         </p>
 
                         <p>
-                            <strong>Ville :</strong> {user.address.city}
+                            <strong>Ville :</strong> {user.address?.city}
                         </p>
 
                         <p>
-                            <strong>Code postal :</strong> {user.address.postalCode}
+                            <strong>Code postal :</strong> {user.address?.postalCode}
                         </p>
 
                         <p>
-                            <strong>Pays :</strong> {user.address.country}
+                            <strong>Pays :</strong> {user.address?.country}
                         </p>
 
                         <h2>Entreprise</h2>
 
                         <p>
-                            <strong>Nom :</strong> {user.company.name}
+                            <strong>Nom :</strong> {user.company?.name}
                         </p>
 
                         <p>
-                            <strong>Département :</strong> {user.company.department}
+                            <strong>Département :</strong> {user.company?.department}
                         </p>
 
                         <p>
-                            <strong>Poste :</strong> {user.company.title}
+                            <strong>Poste :</strong> {user.company?.title}
                         </p>
                     </div>
                 </div>
