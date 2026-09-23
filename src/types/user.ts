@@ -23,6 +23,6 @@ export interface User {
     birthDate: string
     image: string
     role: string
-    address?: UserAddress
-    company?: UserCompany
+    address: UserAddress
+    company: UserCompany
 }

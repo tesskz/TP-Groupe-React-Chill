@@ -1,61 +1,103 @@
 import { useSelector } from "react-redux";
-import "./Profile.css";
 import type { RootState } from "../store/store";
+import "./Profile.css";
+import NotFound from "./NotFound.tsx";
 
 function Profile() {
     const user = useSelector((state: RootState) => state.auth.loggedUser);
 
     if (!user) {
-        return <p>Utilisateur non connecté.</p>;
-    }
+        return (<NotFound />);
+    } else {
 
-    let hidePassword = "";
+        return (
+            <main className="profile">
+                <div className="profile-card">
+                    <img
+                        src={user.image}
+                        alt={user.username}
+                        className="profile-image"
+                    />
 
-    if (user.password) {
-        for (let i = 0; i < user.password.length; i++) {
-            hidePassword += "*";
-        }
-    }
+                    <h1>{user.firstName} {user.lastName}</h1>
 
-    return (
-        <main className="profile">
-            <div className="profile-card">
-                <img
-                    src={user.image}
-                    alt={user.username}
-                    className="profile-image"
-                />
+                    <div className="profile-info">
+                        <p>
+                            <strong>ID :</strong> {user.id}
+                        </p>
 
-                <h1>{user.firstName} {user.lastName}</h1>
+                        <p>
+                            <strong>Prénom :</strong> {user.firstName}
+                        </p>
 
-                <div className="profile-info">
-                    <p><strong>ID :</strong> {user.id}</p>
-                    <p><strong>Prénom :</strong> {user.firstName}</p>
-                    <p><strong>Nom :</strong> {user.lastName}</p>
-                    <p><strong>Username :</strong> {user.username}</p>
-                    <p><strong>Email :</strong> {user.email}</p>
-                    <p><strong>Téléphone :</strong> {user.phone}</p>
-                    <p><strong>Âge :</strong> {user.age} ans</p>
-                    <p><strong>Genre :</strong> {user.gender}</p>
-                    <p><strong>Date de naissance :</strong> {user.birthDate}</p>
-                    <p><strong>Rôle :</strong> {user.role}</p>
+                        <p>
+                            <strong>Nom :</strong> {user.lastName}
+                        </p>
 
-                    <h2>Adresse</h2>
+                        <p>
+                            <strong>Username :</strong> {user.username}
+                        </p>
 
-                    <p><strong>Adresse :</strong> {user.address?.address}</p>
-                    <p><strong>Ville :</strong> {user.address?.city}</p>
-                    <p><strong>Code postal :</strong> {user.address?.postalCode}</p>
-                    <p><strong>Pays :</strong> {user.address?.country}</p>
+                        <p>
+                            <strong>Email :</strong> {user.email}
+                        </p>
 
-                    <h2>Entreprise</h2>
+                        <p>
+                            <strong>Téléphone :</strong> {user.phone}
+                        </p>
 
-                    <p><strong>Nom :</strong> {user.company?.name}</p>
-                    <p><strong>Département :</strong> {user.company?.department}</p>
-                    <p><strong>Poste :</strong> {user.company?.title}</p>
+                        <p>
+                            <strong>Âge :</strong> {user.age} ans
+                        </p>
+
+                        <p>
+                            <strong>Genre :</strong> {user.gender}
+                        </p>
+
+                        <p>
+                            <strong>Date de naissance :</strong> {user.birthDate}
+                        </p>
+
+                        <p>
+                            <strong>Rôle :</strong> {user.role}
+                        </p>
+
+                        <h2>Adresse</h2>
+
+                        <p>
+                            <strong>Adresse :</strong> {user.address.address}
+                        </p>
+
+                        <p>
+                            <strong>Ville :</strong> {user.address.city}
+                        </p>
+
+                        <p>
+                            <strong>Code postal :</strong> {user.address.postalCode}
+                        </p>
+
+                        <p>
+                            <strong>Pays :</strong> {user.address.country}
+                        </p>
+
+                        <h2>Entreprise</h2>
+
+                        <p>
+                            <strong>Nom :</strong> {user.company.name}
+                        </p>
+
+                        <p>
+                            <strong>Département :</strong> {user.company.department}
+                        </p>
+
+                        <p>
+                            <strong>Poste :</strong> {user.company.title}
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </main>
-    );
+            </main>
+        );
+    }
 }
 
 export default Profile;
