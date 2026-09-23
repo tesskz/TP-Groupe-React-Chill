@@ -12,6 +12,7 @@ function Menu() {
   const handleLogout = () => {
     dispatch(clearLoggedUser());
     localStorage.removeItem("token");
+    localStorage.removeItem("loggedUser");
     navigate("/");
   };
 

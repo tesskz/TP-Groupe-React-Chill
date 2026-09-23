@@ -20,6 +20,7 @@ function Login() {
                 password,
             });
 
+
             localStorage.setItem("token", login.data.accessToken);
 
             const me = await axios.get("https://dummyjson.com/auth/me", {
@@ -28,12 +29,14 @@ function Login() {
                 },
             });
 
+            localStorage.setItem("loggedUser", JSON.stringify(me.data));
             dispatch(setLoggedUser(me.data));
+
             setError("");
             navigate("/profile");
         } catch (e) {
-                setError("Nom d'utilisateur ou mot de passe incorrect.");
-            }
+            setError("Nom d'utilisateur ou mot de passe incorrect.");
+        }
     };
 
     return (
