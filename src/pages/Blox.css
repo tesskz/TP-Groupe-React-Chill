@@ -1,0 +1,178 @@
+.blog,
+.post-detail,
+.error {
+  width: 100%;
+  max-width: 950px;
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 40px 30px;
+  background-color: #f7f7f7;
+  text-align: left;
+}
+
+.blog > h1,
+.post-detail > h1 {
+  margin: 0 0 30px;
+  text-align: center;
+  color: #222;
+  font-size: 36px;
+}
+
+/* Formulaire */
+
+.blog form,
+.post-detail form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog form h2 {
+  margin: 0 0 10px;
+  color: #222;
+  font-size: 24px;
+}
+
+.blog input,
+.blog textarea,
+.post-detail textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  color: #222;
+  background-color: white;
+  font: inherit;
+}
+
+.blog textarea,
+.post-detail textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.blog input:focus,
+.blog textarea:focus,
+.post-detail textarea:focus {
+  border-color: #222;
+  outline: none;
+}
+
+/* Boutons */
+
+.blog button,
+.post-detail button {
+  width: fit-content;
+  padding: 10px 16px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  background-color: #222;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+.blog button:hover,
+.post-detail button:hover {
+  background-color: #444;
+}
+
+/* Articles */
+
+.blog section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog article {
+  padding: 25px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog article h2 {
+  margin-top: 0;
+  color: #222;
+  font-size: 22px;
+}
+
+.blog article p,
+.post-detail > p {
+  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.blog article a,
+.post-detail a,
+.error a {
+  color: #222;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.blog article button,
+.post-detail article button {
+  margin-left: 15px;
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+/* Page détail */
+
+.post-detail > a {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.post-detail section {
+  margin-top: 35px;
+}
+
+.post-detail section > h2 {
+  color: #222;
+}
+
+.post-detail section > article {
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-detail section > article h3 {
+  color: #222;
+}
+
+.post-detail section > article p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .blog,
+  .post-detail,
+  .error {
+    padding: 30px 15px;
+  }
+
+  .blog > h1,
+  .post-detail > h1 {
+    font-size: 30px;
+  }
+
+  .blog article,
+  .blog form {
+    padding: 20px;
+  }
+}

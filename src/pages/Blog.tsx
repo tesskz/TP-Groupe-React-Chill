@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import type { RootState } from '../store/store'
 import { addPost, deletePost, setPosts } from '../store/reducers/post'
+import "./Blox.css"
 
 function Blog() {
     const dispatch = useDispatch()
@@ -63,7 +64,7 @@ function Blog() {
         <main className="blog">
             <h1>Blog</h1>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="Blog-section">
                 <h2>Ajouter un article</h2>
 
                 <input
@@ -84,7 +85,7 @@ function Blog() {
                 </button>
             </form>
 
-            <section>
+            <section className="Blog-section">
                 {posts.map((post) => (
                     <article key={post.id}>
                         <h2>{post.title}</h2>
