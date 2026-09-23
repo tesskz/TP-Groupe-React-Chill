@@ -70,3 +70,25 @@
 .recipe-detail-content ol li {
   font-weight: 400;
 }
+
+.heart-button{
+ position: absolute;
+  top: 16px;
+  right: 150px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: #d94a62;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-detail-image-wrapper{
+  position: relative;
+  width: 100%;
+  margin: 0 auto 35px;
+}

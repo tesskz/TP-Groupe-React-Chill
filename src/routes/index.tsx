@@ -6,7 +6,7 @@ import Users from '../pages/Users.tsx'
 import UserDetail from '../pages/UserDetail.tsx'
 import Login from '../pages/Login.tsx'
 import Profile from '../pages/Profile.tsx'
-import Favorites from '../pages/Favorites.tsx'
+import Favoris from '../pages/Favoris.tsx'
 import Blog from '../pages/Blog.tsx'
 import PostDetail from '../pages/PostDetail.tsx'
 import NotFound from '../pages/NotFound.tsx'
@@ -58,7 +58,7 @@ const routes = [
             },
             {
                 path: '/favoris',
-                element: <PrivateRoute><Favorites /></PrivateRoute>,
+                element: <PrivateRoute><Favoris /></PrivateRoute>,
             },
             {
                 path: '*',

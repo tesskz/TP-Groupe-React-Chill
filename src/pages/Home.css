@@ -67,3 +67,25 @@
   margin: 0;
   color: #666;
 }
+
+.heart-button-home{
+ position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: #d94a62;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-detail-image-wrapper{
+  position: relative;
+  width: 100%;
+  margin: 0 auto 35px;
+}
