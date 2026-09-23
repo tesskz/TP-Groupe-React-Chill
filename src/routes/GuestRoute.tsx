@@ -15,7 +15,7 @@ const GuestRoute = ({ children }: GuestRouteProps) => {
         return <p>Chargement...</p>
     }
 
-    return loggedUser ? <Navigate to="/" replace /> : <>{children}</>
+    return loggedUser ? <Navigate to="/profile" replace /> : <>{children}</>
 }
 
 export default GuestRoute
