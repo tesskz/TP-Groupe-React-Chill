@@ -3,16 +3,13 @@
 Plateforme communautaire de recettes construite avec React, TypeScript, Vite, React Router et Redux Toolkit.
 Les donnees proviennent de l'API publique DummyJSON (https://dummyjson.com).
 
-## Repartition du TP
+## Repartition du travail
 
-On travaille à 3 avec des features précises à compléter par personne:
-   
-    Dylan: - Recettes / Favoris / Citation du jour
-    
-    Ranya: - Authentification & Espace membres
-    
-    Abdelmalek: - Blog / Commentaires / Design
-    
+| Etudiant | Perimetre |
+|---|---|
+| **Abdelmalek Ahmed-Messaoud** | Socle Redux (store, 8 reducers, types, chargement des donnees de l'API dans `main.tsx`), routage et gardes (`GuestRoute`, `PrivateRoute`, reducer `loading`), authentification (login via `/auth/login`, persistance du token, deconnexion), annuaire `/users`, fiche membre, profil prive, menu contextuel |
+| **Dylan** | Catalogue de recettes, favoris, widget citation du jour |
+| **Ranya** | Blog, commentaires, design |
 
 ## Installation
 
