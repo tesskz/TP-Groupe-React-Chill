@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import data from "../users.json";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { setLoggedUser } from "../store/reducers/auth";
 
 function Login() {
     const [username, setUsername] = useState("");
@@ -9,20 +11,29 @@ function Login() {
     const [error, setError] = useState("");
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const handleLogin = () => {
-        const user = data.users.find(
-            (user) =>
-                user.username === username &&
-                user.password === password
-        );
+    const handleLogin = async () => {
+        try {
+            const login = await axios.post("https://dummyjson.com/auth/login", {
+                username,
+                password,
+            });
 
-        if (user) {
+            localStorage.setItem("token", login.data.accessToken);
+
+            const me = await axios.get("https://dummyjson.com/auth/me", {
+                headers: {
+                    Authorization: `Bearer ${login.data.accessToken}`,
+                },
+            });
+
+            dispatch(setLoggedUser(me.data));
             setError("");
             navigate("/profile");
-        } else {
-            setError("Nom d'utilisateur ou mot de passe incorrect.");
-        }
+        } catch (e) {
+                setError("Nom d'utilisateur ou mot de passe incorrect.");
+            }
     };
 
     return (
