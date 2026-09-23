@@ -7,8 +7,11 @@ Les donnees proviennent de l'API publique DummyJSON (https://dummyjson.com).
 
 On travaille à 3 avec des features précises à compléter par personne:
     Dylan: - Recettes / Favoris / Citation du jour
+    
     Ranya: - Authentification & Espace membres
+    
     Abdelmalek: - Blog / Commentaires / Design
+    
 
 ## Installation
 
