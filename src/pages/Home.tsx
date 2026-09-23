@@ -15,7 +15,7 @@ function Home() {
   return (
     <main className="home">
       <header className="home-header">
-        <h1>Kévin Joffret</h1>
+        <h1>Abdelmalek / Dylan / Ranya</h1>
         <p>Mes recettes de cuisine</p>
       </header>
 

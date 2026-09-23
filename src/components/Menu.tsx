@@ -16,40 +16,45 @@ function Menu() {
   };
 
   return (
-      <nav className="header">
-        <div className="header-content">
-          <Link to="/" className="logo">
-            🍴 Accueil
-          </Link>
+    <nav className="header">
+      <div className="header-content">
+        <Link to="/" className="logo">
+          🍴 Accueil
+        </Link>
 
-          <ul className="nav-links">
-            <li>
-              <Link to="/users">Annuaire</Link>
-            </li>
-            <li>
-              <Link to="/posts">Blog</Link>
-            </li>
+        <ul className="nav-links">
+          <li>
+            <Link to="/users">Annuaire</Link>
+          </li>
+          <li>
+            <Link to="/posts">Blog</Link>
+          </li>
 
-            {loggedUser ? (
-                <>
-                  <li>
-                    <Link to="/profile">Mon Profil</Link>
-                  </li>
-                  <li>
-                    <Link to="/favoris">Mes Favoris</Link>
-                  </li>
-                  <li>
-                    <button onClick={handleLogout}>Déconnexion</button>
-                  </li>
-                </>
-            ) : (
-                <li>
-                  <Link to="/login">Connexion</Link>
-                </li>
-            )}
-          </ul>
-        </div>
-      </nav>
+          <li>
+            <Link to="/citation">Citation du jour</Link>
+          </li>
+
+
+          {loggedUser ? (
+            <>
+              <li>
+                <Link to="/profile">Mon Profil</Link>
+              </li>
+              <li>
+                <Link to="/favoris">Mes Favoris</Link>
+              </li>
+              <li>
+                <button onClick={handleLogout}>Déconnexion</button>
+              </li>
+            </>
+          ) : (
+            <li>
+              <Link to="/login">Connexion</Link>
+            </li>
+          )}
+        </ul>
+      </div>
+    </nav>
   );
 }
 
