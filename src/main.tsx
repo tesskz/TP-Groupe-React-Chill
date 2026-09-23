@@ -45,8 +45,7 @@ const getQuote = async () => {
 
 const getLoggedUser = async () => {
     try {
-        const url = 'https://dummyjson.com/auth/me'
-        const response = await axios.get(url, {
+        const response = await axios.get('https://dummyjson.com/auth/me', {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
