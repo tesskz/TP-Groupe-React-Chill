@@ -12,6 +12,7 @@ import PostDetail from '../pages/PostDetail.tsx'
 import NotFound from '../pages/NotFound.tsx'
 import GuestRoute from './GuestRoute.tsx'
 import PrivateRoute from './PrivateRoute.tsx'
+import Citation from "../pages/Citation.tsx";
 
 const Layout = () => (
     <>
@@ -59,6 +60,10 @@ const routes = [
             {
                 path: '/favoris',
                 element: <PrivateRoute><Favoris /></PrivateRoute>,
+            },
+            {
+                path: "/citation",
+                element: <Citation />,
             },
             {
                 path: '*',
