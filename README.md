@@ -53,14 +53,6 @@ l'attendent avant de rediriger.
 | `/favoris` | recettes favorites | membres uniquement |
 | `*` | page 404 | public |
 
-## Repartition du travail
-
-| Etudiant | Perimetre |
-|---|---|
-| Abdelmalek Ahmed-Messaoud | Socle Redux (store, reducers, types, chargements API, gardes de route), catalogue de recettes, favoris, widget citation du jour |
-| _a completer_ | Authentification (login, token, deconnexion), annuaire, profil prive, menu contextuel |
-| _a completer_ | Blog et commentaires (listing, detail, ajout et suppression avec mise a jour optimiste), page 404, charte graphique |
-
 ## Choix techniques
 
 - **Redux Toolkit** pour l'etat global : les donnees chargees une fois sont accessibles partout sans nouvel appel reseau.
