@@ -1,8 +1,8 @@
-import "./Annuaire.css";
+import "./Users.css";
 import data from "../users.json";
 import { Link } from "react-router-dom";
 
-function Annuaire() {
+function Users() {
   return (
     <main className="directory">
       <header className="directory-header">
@@ -11,7 +11,7 @@ function Annuaire() {
 
       <section className="users-grid">
         {data.users.map((user) => (
-          <Link to={`/user/${user.id}`} className="user-card" key={user.id}>
+          <Link to={`/users/${user.id}`} className="user-card" key={user.id}>
             <img
               src={user.image}
               alt={user.username}
@@ -28,4 +28,4 @@ function Annuaire() {
   );
 }
 
-export default Annuaire;
+export default Users;

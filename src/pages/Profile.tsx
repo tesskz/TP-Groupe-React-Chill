@@ -1,6 +1,6 @@
 import {useLocation} from "react-router-dom";
 import "./Profile.css";
-import Error from "./Error.tsx";
+import NotFound from "./NotFound.tsx";
 
 function Profile() {
     const location = useLocation();
@@ -15,7 +15,7 @@ function Profile() {
 
     if (!user) {
 
-        return (<Error />);
+        return (<NotFound />);
 
     } else {
 

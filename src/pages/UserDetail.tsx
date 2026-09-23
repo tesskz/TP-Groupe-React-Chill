@@ -1,16 +1,16 @@
 import { useParams } from "react-router-dom";
 import data from "../users.json";
-import Error from "./Error.tsx";
-import "./User.css";
+import NotFound from "./NotFound.tsx";
+import "./UserDetail.css";
 
-function User() {
+function UserDetail() {
     const { id } = useParams();
     const user = data.users.find(
         (user) => user.id === Number(id)
     );
 
     if (!user) {
-        return(<Error />);
+        return(<NotFound />);
     } else {
 
         return (
@@ -29,5 +29,5 @@ function User() {
     }
 }
 
-export default User;
+export default UserDetail;
 

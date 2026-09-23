@@ -1,11 +1,23 @@
 import { configureStore } from '@reduxjs/toolkit'
-import userReducer from './reducers/user'
 import authReducer from './reducers/auth'
+import userReducer from './reducers/user'
+import recipeReducer from './reducers/recipe'
+import favoriteReducer from './reducers/favorite'
+import postReducer from './reducers/post'
+import commentReducer from './reducers/comment'
+import quoteReducer from './reducers/quote'
+import loadingReducer from './reducers/loading'
 
 export const store = configureStore({
     reducer: {
+        auth: authReducer,
         user: userReducer,
-        auth: authReducer
+        recipe: recipeReducer,
+        favorite: favoriteReducer,
+        post: postReducer,
+        comment: commentReducer,
+        quote: quoteReducer,
+        loading: loadingReducer,
     },
 })
 

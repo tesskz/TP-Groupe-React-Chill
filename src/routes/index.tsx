@@ -1,55 +1,71 @@
-import { Outlet } from "react-router";
-import App from "../App.tsx";
-import Menu from "../components/Menu.tsx";
-import RecipeDetail from "../components/RecipeDetail.tsx";
-import Annuaire from "../components/Annuaire.tsx";
-import Login from "../components/Login.tsx";
-import User from "../components/User.tsx";
-import Profile from "../components/Profile.tsx";
-import Error from "../components/Error.tsx";
-import GuestRoute from "./GuestRoute.tsx";
+import { Outlet } from 'react-router'
+import Menu from '../components/Menu.tsx'
+import Home from '../pages/Home.tsx'
+import RecipeDetail from '../pages/RecipeDetail.tsx'
+import Users from '../pages/Users.tsx'
+import UserDetail from '../pages/UserDetail.tsx'
+import Login from '../pages/Login.tsx'
+import Profile from '../pages/Profile.tsx'
+import Favorites from '../pages/Favorites.tsx'
+import Blog from '../pages/Blog.tsx'
+import PostDetail from '../pages/PostDetail.tsx'
+import NotFound from '../pages/NotFound.tsx'
+import GuestRoute from './GuestRoute.tsx'
+import PrivateRoute from './PrivateRoute.tsx'
 
 const Layout = () => (
     <>
         <Menu />
         <Outlet />
     </>
-);
+)
 
 const routes = [
     {
         element: <Layout />,
         children: [
             {
-                path: "/",
-                element: <App />,
+                path: '/',
+                element: <Home />,
             },
             {
-                path: "/recipe/:id",
+                path: '/recipes/:id',
                 element: <RecipeDetail />,
             },
             {
-                path: "/annuaire",
-                element: <Annuaire />,
+                path: '/users',
+                element: <Users />,
             },
             {
-                path: "/Connexion",
+                path: '/users/:id',
+                element: <UserDetail />,
+            },
+            {
+                path: '/posts',
+                element: <Blog />,
+            },
+            {
+                path: '/posts/:id',
+                element: <PostDetail />,
+            },
+            {
+                path: '/login',
                 element: <GuestRoute><Login /></GuestRoute>,
             },
             {
-                path: "/user/:id",
-                element: <User />,
+                path: '/profile',
+                element: <PrivateRoute><Profile /></PrivateRoute>,
             },
             {
-                path: "/profile/me",
-                element: <Profile />,
+                path: '/favoris',
+                element: <PrivateRoute><Favorites /></PrivateRoute>,
             },
             {
-                path: "*",
-                element: <Error />,
-            }
-        ]
-    }
-];
+                path: '*',
+                element: <NotFound />,
+            },
+        ],
+    },
+]
 
-export default routes;
+export default routes

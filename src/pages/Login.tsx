@@ -19,7 +19,7 @@ function Login() {
 
         if (user) {
             setError("");
-            navigate(`/profile/me`, { state: user } );
+            navigate("/profile");
         } else {
             setError("Nom d'utilisateur ou mot de passe incorrect.");
         }

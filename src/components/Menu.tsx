@@ -11,10 +11,10 @@ function Menu() {
 
         <ul className="nav-links">
           <li>
-            <Link to="/Connexion">Connexion</Link>
+            <Link to="/login">Connexion</Link>
           </li>
           <li>
-            <Link to="/annuaire">Annuaire</Link>
+            <Link to="/users">Annuaire</Link>
           </li>
         </ul>
       </div>

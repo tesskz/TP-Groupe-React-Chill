@@ -1,16 +1,21 @@
 import type { ReactNode } from 'react'
 import { Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import type {RootState } from '../store/store.ts'
+import type { RootState } from '../store/store'
 
 interface GuestRouteProps {
     children: ReactNode
 }
 
 const GuestRoute = ({ children }: GuestRouteProps) => {
-    const loggedUser = useSelector((state: RootState) => state.auth.loggedUser);
+    const isLoading = useSelector((state: RootState) => state.loading.isLoading)
+    const loggedUser = useSelector((state: RootState) => state.auth.loggedUser)
 
-    return loggedUser ? <Navigate to="/" replace /> : <>{children}</>;
+    if (isLoading) {
+        return <p>Chargement...</p>
+    }
 
-};
-        export default GuestRoute;
+    return loggedUser ? <Navigate to="/" replace /> : <>{children}</>
+}
+
+export default GuestRoute

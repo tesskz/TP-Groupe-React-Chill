@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import "./RecipeDetail.css";
 import data from "../recipes.json";
-import Error from "./Error.tsx";
+import NotFound from "./NotFound.tsx";
 
 function RecipeDetail() {
   const { id } = useParams();
@@ -11,7 +11,7 @@ function RecipeDetail() {
   );
 
   if (!recipe) {
-    return (<Error />);
+    return (<NotFound />);
   }
 
   return (

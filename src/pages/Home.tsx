@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import "./App.css";
-import data from "./recipes.json";
+import "./Home.css";
+import data from "../recipes.json";
 
-function App() {
+function Home() {
   return (
     <main className="home">
       <header className="home-header">
@@ -13,7 +13,7 @@ function App() {
       <section className="recipes-grid">
         {data.recipes.map((recipe) => (
           <Link
-            to={`/recipe/${recipe.id}`}
+            to={`/recipes/${recipe.id}`}
             className="recipe-card"
             key={recipe.id}
           >
@@ -34,4 +34,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
