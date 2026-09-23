@@ -5,11 +5,13 @@ Les donnees proviennent de l'API publique DummyJSON (https://dummyjson.com).
 
 ## Repartition du travail
 
-| Etudiant | Perimetre |
-|---|---|
-| **Abdelmalek Ahmed-Messaoud** | Socle Redux (store, 8 reducers, types, chargement des donnees de l'API dans `main.tsx`), routage et gardes (`GuestRoute`, `PrivateRoute`, reducer `loading`), authentification (login via `/auth/login`, persistance du token, deconnexion), annuaire `/users`, fiche membre, profil prive, menu contextuel |
-| **Dylan** | Catalogue de recettes, favoris, widget citation du jour |
-| **Ranya** | Blog, commentaires, design |
+On travaille a 3 avec des features precises a completer par personne:
+
+    Dylan: - Recettes / Favoris / Citation du jour
+
+    Ranya: - Blog / Commentaires / Design
+
+    Abdelmalek: - Socle Redux / Authentification / Espace membres
 
 ## Installation
 
