@@ -11,6 +11,9 @@ function Menu() {
 
         <ul className="nav-links">
           <li>
+            <Link to="/Favoris">Favoris</Link>
+          </li>
+          <li>
             <Link to="/login">Connexion</Link>
           </li>
           <li>

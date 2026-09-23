@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import authReducer from './reducers/auth'
 import userReducer from './reducers/user'
 import recipeReducer from './reducers/recipe'
-import favoriteReducer from './reducers/favorite'
+import favouriteReducer from './reducers/favourite'
 import postReducer from './reducers/post'
 import commentReducer from './reducers/comment'
 import quoteReducer from './reducers/quote'
@@ -13,7 +13,7 @@ export const store = configureStore({
         auth: authReducer,
         user: userReducer,
         recipe: recipeReducer,
-        favorite: favoriteReducer,
+        favourite: favouriteReducer,
         post: postReducer,
         comment: commentReducer,
         quote: quoteReducer,

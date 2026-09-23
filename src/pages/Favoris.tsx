@@ -1,30 +1,20 @@
 import { useParams } from "react-router-dom";
 import "./RecipeDetail.css";
 import NotFound from "./NotFound.tsx";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import type { RootState } from "../store/store.ts";
-import { addFavourite, removeFavourite } from "../store/reducers/favourite.ts";
 
 function RecipeDetail() {
   const { id } = useParams();
 
   const recipes = useSelector((state: RootState) => state.recipe.recipes)
-  const favouriteIds = useSelector((state: RootState) => state.favourite.recipeIds);
 
   const recipe = recipes.find(
     (recipe) => recipe.id === Number(id)
   );
 
-  const dispatch = useDispatch();
-
   if (!recipe) {
     return (<NotFound />);
-  }
-
-  const isFavourite = favouriteIds.includes(recipe.id)
-
-  const handleFavourite = () => {
-    dispatch(isFavourite ? removeFavourite(recipe.id) : addFavourite(recipe.id))
   }
 
   return (
@@ -36,13 +26,7 @@ function RecipeDetail() {
           alt={recipe.name}
           className="recipe-detail-image"
         />
-        <button 
-        type="button" 
-        className={`heart-button ${isFavourite ? "is-favourite" : ""}`}
-        onClick={handleFavourite}
-        >
-          {isFavourite ? "❦" : "♡"}
-        </button>
+        <button type="button" id="heart-button">♡</button>
       </div>
       <div className="recipe-detail-content">
         <h1>{recipe.name}</h1>
