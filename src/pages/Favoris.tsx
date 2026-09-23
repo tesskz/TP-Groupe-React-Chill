@@ -1,62 +1,67 @@
-import { useParams } from "react-router-dom";
-import "./RecipeDetail.css";
-import NotFound from "./NotFound.tsx";
-import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store/store.ts";
+import "./Home.css"
+import { addFavourite, removeFavourite } from "../store/reducers/favourite.ts";
 
-function RecipeDetail() {
-  const { id } = useParams();
+function Favoris() {
+  const recipes = useSelector((state: RootState) => state.recipe.recipes);
+  const favouriteIds = useSelector((state: RootState) => state.favourite.recipeIds);
 
-  const recipes = useSelector((state: RootState) => state.recipe.recipes)
+  const dispatch = useDispatch();
 
-  const recipe = recipes.find(
-    (recipe) => recipe.id === Number(id)
+  const favouriteRecipes = recipes.filter((recipe) =>
+    favouriteIds.includes(recipe.id)
   );
 
-  if (!recipe) {
-    return (<NotFound />);
-  }
-
   return (
+    <main className="favourites">
+      <h1>Mes favoris</h1>
 
-    <main className="recipe-detail">
-      <div className="recipe-detail-image-wrapper">
-        <img
-          src={recipe.image}
-          alt={recipe.name}
-          className="recipe-detail-image"
-        />
-        <button type="button" id="heart-button">♡</button>
-      </div>
-      <div className="recipe-detail-content">
-        <h1>{recipe.name}</h1>
+      {favouriteRecipes.length === 0 ? (
+        <p>Vous n'avez encore aucune recette favorite.</p>
+      ) : (
+        <section className="recipes-grid">
+          {favouriteRecipes.map((recipe) => {
+            const isFavourite = favouriteIds.includes(recipe.id);
 
-        <p>
-          Temps de préparation : {recipe.prepTimeMinutes} min
-        </p>
+            const handleFavourite = (e: React.MouseEvent) => {
+              e.preventDefault();
+              dispatch(
+                isFavourite ? removeFavourite(recipe.id) : addFavourite(recipe.id)
+              );
+            };
 
-        <p>
-          Temps de cuisson : {recipe.cookTimeMinutes} min
-        </p>
+            return (
+              <Link
+                to={`/recipes/${recipe.id}`}
+                className="recipes-card"
+                key={recipe.id}
+              >
+                <div className="recipe-detail-image-wrapper">
+                  <img
+                    src={recipe.image}
+                    alt={recipe.name}
+                    className="recipe-image"
+                  />
+                  <button
+                    type="button"
+                    className={`heart-button-home ${isFavourite ? "is-favourite" : ""}`}
+                    onClick={handleFavourite}
+                  >
+                    {isFavourite ? "❦" : "♡"}
+                  </button>
+                </div>
+                <h2>{recipe.name}</h2>
+              </Link>
+            );
+          })}
 
-        <h2>Ingrédients</h2>
+        </section>
+      )}
+    </main>
 
-        <ul>
-          {recipe.ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
-        </ul>
-
-        <h2>Instructions</h2>
-
-        <ol>
-          {recipe.instructions.map((instruction, index) => (
-            <li key={index}>{instruction}</li>
-          ))}
-        </ol>
-      </div>
-    </main >
   );
 }
 
-export default RecipeDetail;
+export default Favoris;

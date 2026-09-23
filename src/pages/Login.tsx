@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import data from "../users.json";
+import { useDispatch } from "react-redux";
+import { setLoggedUser } from "../store/reducers/auth.ts";
 
 function Login() {
     const [username, setUsername] = useState("");
@@ -9,6 +11,8 @@ function Login() {
     const [error, setError] = useState("");
 
     const navigate = useNavigate();
+
+    const dispatch = useDispatch();
 
     const handleLogin = () => {
         const user = data.users.find(
@@ -19,7 +23,13 @@ function Login() {
 
         if (user) {
             setError("");
-            navigate("/profile");
+
+            localStorage.setItem("loggedUser", JSON.stringify(user));
+            dispatch(setLoggedUser(user));
+
+            navigate("/profile", {
+                state: user,
+            });
         } else {
             setError("Nom d'utilisateur ou mot de passe incorrect.");
         }
