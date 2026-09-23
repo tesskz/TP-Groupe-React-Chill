@@ -3,6 +3,17 @@
 Plateforme communautaire de recettes construite avec React, TypeScript, Vite, React Router et Redux Toolkit.
 Les donnees proviennent de l'API publique DummyJSON (https://dummyjson.com).
 
+## Repartition du TP
+
+On travaille à 3 avec des features précises à compléter par personne:
+   
+    Dylan: - Recettes / Favoris / Citation du jour
+    
+    Ranya: - Authentification & Espace membres
+    
+    Abdelmalek: - Blog / Commentaires / Design
+    
+
 ## Installation
 
 ```bash
