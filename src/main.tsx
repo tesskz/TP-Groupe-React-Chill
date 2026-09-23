@@ -11,6 +11,7 @@ import Login from './components/Login.tsx'
 import User from './components/User.tsx'
 import Error from './components/Error.tsx'
 import Profile from './components/Profile.tsx'
+import axios from 'axios'
 
 
 const Layout = () => (
@@ -56,6 +57,26 @@ const router = createBrowserRouter([
   }
 ]);
 
+const getLoggedUser = async () => {
+  try {
+    const url = "https://dummyjson.com/auth/me";
+    const response = await axios.get(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    });
+    store.dispatch(setLoggedUser(response.data))
+  } catch(e) {
+    localStorage.removeItem('token')
+    store.dispatch(setLoggedUser(null))
+  }
+}
+
+Promise.all([getUsers(), getLoggedUser()])
+
+
 createRoot(document.getElementById('root')!).render(
   <RouterProvider router={router} />
 )
+  
