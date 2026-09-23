@@ -15,11 +15,9 @@ import PrivateRoute from './PrivateRoute.tsx'
 import Citation from "../pages/Citation.tsx";
 
 const Layout = () => (
-    <>
-        <Menu />
-        <Outlet />
-    </>
-)
+<> <Menu /> <Outlet />
+</>
+);
 
 const routes = [
     {
@@ -73,4 +71,4 @@ const routes = [
     },
 ]
 
-export default routes
+export default routes;
